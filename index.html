@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初めての電子ピアノ選び - 失敗しないための比較ガイド</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #5a5a5a;
+            background-color: #f9f7f4;
+        }
+
+        /* ===== パステルカラーパレット ===== */
+        :root {
+            --pastel-pink: #f8d7e6;
+            --pastel-blue: #d4e8f7;
+            --pastel-green: #d4f1d4;
+            --pastel-yellow: #fef5d4;
+            --pastel-purple: #e8d4f1;
+            --pastel-peach: #f5e6d3;
+            --accent-pink: #f0a8d8;
+            --accent-blue: #a8d8f0;
+            --text-dark: #5a5a5a;
+            --text-light: #8a8a8a;
+            --white: #ffffff;
+        }
+
+        /* ===== ヘッダー ===== */
+        header {
+            background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--pastel-blue) 50%, var(--pastel-purple) 100%);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--accent-pink);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-pink);
+        }
+
+        /* ===== ヒーローセクション ===== */
+        .hero {
+            background: linear-gradient(180deg, var(--pastel-yellow) 0%, var(--pastel-peach) 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .hero h1 .highlight {
+            color: var(--accent-pink);
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-blue) 100%);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(240, 168, 216, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(240, 168, 216, 0.6);
+        }
+
+        /* ===== イントロセクション ===== */
+        .intro-section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .intro-section h2 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .intro-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .intro-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--accent-pink);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .intro-card:nth-child(2) {
+            border-left-color: var(--accent-blue);
+        }
+
+        .intro-card:nth-child(3) {
+            border-left-color: #b8e6b8;
+        }
+
+        .intro-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .intro-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .intro-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* ===== 2つの選択肢セクション ===== */
+        .choices-section {
+            background: linear-gradient(135deg, var(--pastel-green) 0%, var(--pastel-blue) 100%);
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+
+        .choices-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .choices-section h2 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .comparison-table {
+            width: 100%;
+            background: var(--white);
+            border-collapse: collapse;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-blue) 100%);
+            color: var(--white);
+            padding: 20px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f0f8ff;
+        }
+
+        /* ===== 詳細比較セクション ===== */
+        .detail-comparison {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .detail-comparison h2 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .comparison-item {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .comparison-item h3 {
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--pastel-pink);
+        }
+
+        .comparison-item:nth-child(2) h3 {
+            border-bottom-color: var(--pastel-blue);
+        }
+
+        .comparison-item:nth-child(3) h3 {
+            border-bottom-color: var(--pastel-green);
+        }
+
+        .comparison-specs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .spec-card {
+            background: linear-gradient(135deg, var(--pastel-pink) 0%, rgba(248, 215, 230, 0.5) 100%);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid var(--pastel-pink);
+        }
+
+        .spec-card:nth-child(2) {
+            background: linear-gradient(135deg, var(--pastel-blue) 0%, rgba(212, 232, 247, 0.5) 100%);
+            border-color: var(--pastel-blue);
+        }
+
+        .spec-card h4 {
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .spec-card p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* ===== 選択肢フローセクション ===== */
+        .decision-section {
+            background: linear-gradient(135deg, var(--pastel-purple) 0%, var(--pastel-peach) 100%);
+            padding: 60px 20px;
+            margin: 60px 0;
+        }
+
+        .decision-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .decision-section h2 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .decision-table {
+            width: 100%;
+            background: var(--white);
+            border-collapse: collapse;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .decision-table th {
+            background: linear-gradient(135deg, var(--accent-pink) 0%, var(--accent-blue) 100%);
+            color: var(--white);
+            padding: 20px;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .decision-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .decision-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .decision-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* ===== 結論セクション ===== */
+        .conclusion-section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .conclusion-section h2 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .conclusion-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .conclusion-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-top: 5px solid var(--accent-pink);
+        }
+
+        .conclusion-card:nth-child(2) {
+            border-top-color: var(--accent-blue);
+        }
+
+        .conclusion-card h3 {
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .conclusion-card p {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .conclusion-card .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--accent-pink);
+            margin: 15px 0;
+        }
+
+        .conclusion-card:nth-child(2) .price {
+            color: var(--accent-blue);
+        }
+
+        /* ===== ファイナルメッセージセクション ===== */
+        .final-message {
+            background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--pastel-green) 100%);
+            padding: 60px 20px;
+            text-align: center;
+            margin: 60px 0 0 0;
+        }
+
+        .final-message-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-message h2 {
+            font-size: 32px;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+
+        .final-message p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .final-message .cta-button {
+            margin-top: 20px;
+        }
+
+        /* ===== フッター ===== */
+        footer {
+            background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--pastel-blue) 100%);
+            color: var(--text-dark);
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* ===== 画像スタイル ===== */
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        /* ===== レスポンシブ対応 ===== */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .comparison-specs {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table,
+            .decision-table {
+                font-size: 14px;
+            }
+
+            .comparison-table th,
+            .comparison-table td,
+            .decision-table th,
+            .decision-table td {
+                padding: 12px;
+            }
+
+            .conclusion-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .detail-comparison h2,
+            .choices-section h2,
+            .decision-section h2,
+            .conclusion-section h2,
+            .final-message h2 {
+                font-size: 24px;
+            }
+
+            .hero {
+                padding: 50px 20px;
+            }
+
+            .comparison-item {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            nav ul {
+                flex-direction: row;
+                gap: 10px;
+                font-size: 12px;
+            }
+
+            .hero h1 {
+                font-size: 22px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+
+            .comparison-table,
+            .decision-table {
+                font-size: 12px;
+            }
+
+            .comparison-table th,
+            .comparison-table td,
+            .decision-table th,
+            .decision-table td {
+                padding: 8px;
+            }
+
+            .comparison-item {
+                padding: 15px;
+            }
+
+            .spec-card {
+                padding: 15px;
+            }
+
+            .intro-card {
+                padding: 20px;
+            }
+
+            .conclusion-card {
+                padding: 20px;
+            }
+        }
+
+        /* ===== アニメーション ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .intro-card,
+        .spec-card,
+        .conclusion-card,
+        .comparison-item {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .intro-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .intro-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== ヘッダー ===== -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">🎹 <span>電子ピアノ</span>ガイド</a>
+            <nav>
+                <ul>
+                    <li><a href="#choices">選択肢</a></li>
+                    <li><a href="#comparison">比較</a></li>
+                    <li><a href="#decision">選び方</a></li>
+                    <li><a href="#conclusion">結論</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== ヒーローセクション ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>初めての電子ピアノ選び<br><span class="highlight">失敗しないための比較ガイド</span></h1>
+            <p>電子ピアノを選ぶとき、何を基準に比較すればいいのか、よくわかりませんよね。<br>
+            このガイドでは、その疑問に答えていきます。</p>
+            <a href="#decision" class="cta-button">今すぐ選び方をチェック！</a>
+        </div>
+    </section>
+
+    <!-- ===== イントロセクション ===== -->
+    <section class="intro-section">
+        <h2>初めて電子ピアノを選ぶあなたへ</h2>
+        <div class="intro-cards">
+            <div class="intro-card">
+                <h3>💭 初めての電子ピアノ選び</h3>
+                <p>電子ピアノを選ぶとき、何を基準に比較すればいいのか、よくわかりません。このサイトでは、その疑問に答えていきます。</p>
+            </div>
+            <div class="intro-card">
+                <h3>😟 不安なこと、たくさんありますよね</h3>
+                <p>不安なことをいっても、このサイトを読んでいけば、失敗しない選び方がわかります。実機を後悔して比べてください。</p>
+            </div>
+            <div class="intro-card">
+                <h3>🤔 失敗しないために</h3>
+                <p>ヤマハの代表的な電子ピアノ「クラビノーバ」と「アリウス」の違いを、専門用語を避けてわかりやすく解説します。</p>
+            </div>
+        </div>
+        <p style="text-align: center; font-size: 16px; color: var(--text-dark); margin-top: 30px;">
+            このサイトでは、電子ピアノ未経験の方でも失敗しないよう、<strong>ヤマハの代表的な電子ピアノ「クラビノーバ」と「アリウス」の違いを、専門用語を避けてわかりやすく解説</strong>します。
+        </p>
+    </section>
+
+    <!-- ===== 2つの選択肢セクション ===== -->
+    <section class="choices-section" id="choices">
+        <div class="choices-content">
+            <h2>ヤマハ電子ピアノの2つの選択肢</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>シリーズ名</th>
+                        <th>特徴（一言でいうと）</th>
+                        <th>こんな方におすすめ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>ARIUS (アリウス)</strong></td>
+                        <td><strong>お財布にやさしいエントリーモデル</strong></td>
+                        <td>まずは気軽にピアノを始めてみたい、初期投資を抑えたいご家庭</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Clavinova (クラビノーバ)</strong></td>
+                        <td><strong>本物のグランドピアノの弾き心地を追求した本格派</strong></td>
+                        <td>弾き心地や音の表現力を重視したい、本格的に学びたいご家庭</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="text-align: center; color: var(--text-dark); margin-top: 40px; margin-bottom: 30px;">比較のポイントはたった3つ！</h3>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 30px; font-size: 16px;">
+                電子ピアノ選びで迷うのは、機能がたくさんあるから。でも、本当に大切な違いはたったの3つです。
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="color: var(--text-dark); margin-bottom: 10px;">1️⃣ 鍵盤のタッチ</h4>
+                    <p style="color: var(--text-light); font-size: 14px;">弾き心地</p>
+                </div>
+                <div style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="color: var(--text-dark); margin-bottom: 10px;">2️⃣ 音の響き</h4>
+                    <p style="color: var(--text-light); font-size: 14px;">表現力</p>
+                </div>
+                <div style="background: var(--white); padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                    <h4 style="color: var(--text-dark); margin-bottom: 10px;">3️⃣ 価格とデザイン</h4>
+                    <p style="color: var(--text-light); font-size: 14px;">予算と見た目</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== 詳細比較セクション ===== -->
+    <section class="detail-comparison" id="comparison">
+        <h2>徹底比較！アリウス vs クラビノーバ</h2>
+
+        <!-- 比較1: 鍵盤 -->
+        <div class="comparison-item">
+            <h3>1️⃣ 鍵盤のタッチ（弾き心地）</h3>
+            <p style="color: var(--text-light); margin-bottom: 25px;">弾き心地は、ピアノ学習に大きな影響を与えます。</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>比較項目</th>
+                        <th>ARIUS (アリウス) YDP-165クラス</th>
+                        <th>Clavinova (クラビノーバ) CLP-735クラス</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>鍵盤の種類</strong></td>
+                        <td>GH3鍵盤（しっかりした重さ）</td>
+                        <td>グランドタッチ-S鍵盤（繊細な表現力）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>弾き心地</strong></td>
+                        <td><strong>「しっかり練習になる重さ」</strong><br>本物のピアノに近い重さで、指の力をつけるのに役立ちます。</td>
+                        <td><strong>「グランドピアノそっくり！」</strong><br>鍵盤の奥でカチッと鳴る感触（エスケープメント）まで再現。指の動きに繊細に応え、表現力が格段にアップします。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>選ぶ際のポイント</strong></td>
+                        <td><strong>「まずはこれで十分！」</strong><br>指の力がまだ弱い方の最初の1台として、十分な弾き心地です。</td>
+                        <td><strong>「本格的に学ぶならコレ！」</strong><br>より繊細な表現を学びたいなら、クラビノーバがおすすめです。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 比較2: 音 -->
+        <div class="comparison-item">
+            <h3>2️⃣ 音の響き（表現力）</h3>
+            <p style="color: var(--text-light); margin-bottom: 25px;">音の表現力は、ピアノ学習の楽しさを大きく左右します。</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>比較項目</th>
+                        <th>ARIUS (アリウス) YDP-165クラス</th>
+                        <th>Clavinova (クラビノーバ) CLP-735クラス</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>音源</strong></td>
+                        <td>ヤマハCFXサンプリング</td>
+                        <td>ヤマハCFX & ベーゼンドルファーインペリアル</td>
+                    </tr>
+                    <tr>
+                        <td><strong>響きの再現</strong></td>
+                        <td>VRM Lite（簡易的な響き再現）</td>
+                        <td><strong>VRM（よりリアルな響き再現）</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>スピーカー</strong></td>
+                        <td>20W×2（十分な音量）</td>
+                        <td>30W×2（よりパワフルで豊かな音）</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ヘッドホン</strong></td>
+                        <td>シンプルな音</td>
+                        <td><strong>バイノーラルサンプリング</strong><br>ヘッドホンでもまるでピアノ本体から聴こえるような自然な立体感。</td>
+                    </tr>
+                    <tr>
+                        <td><strong>選ぶ際のポイント</strong></td>
+                        <td><strong>「ヤマハの美しい音色」</strong><br>基本的なピアノの音色は十分に楽しめます。</td>
+                        <td><strong>「音の表現力を重視したい」</strong><br>ペダルを踏んだ時の音の広がりや深さが格段にリアル。より繊細な音の違いを感じ取ることができます。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 比較3: 価格 -->
+        <div class="comparison-item">
+            <h3>3️⃣ 価格とデザイン</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>比較項目</th>
+                        <th>ARIUS (アリウス) YDP-165クラス</th>
+                        <th>Clavinova (クラビノーバ) CLP-735クラス</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>価格帯</strong></td>
+                        <td><strong>132,000円（税込送料別）</strong></td>
+                        <td><strong>176,000円（税込送料別）</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>デザイン</strong></td>
+                        <td>コンパクトでシンプル</td>
+                        <td>ピアノらしい重厚感と高級感</td>
+                    </tr>
+                    <tr>
+                        <td><strong>選ぶ際のポイント</strong></td>
+                        <td><strong>「初期投資を抑えたい」</strong><br>初期投資を抑えたい、まずは様子を見たい場合に最適です。</td>
+                        <td><strong>「長く使いたい」</strong><br>本格的なピアノの練習に耐えうる性能で、買い替えの心配が少なく、長く使えます。</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== 選択肢フローセクション ===== -->
+    <section class="decision-section" id="decision">
+        <div class="decision-content">
+            <h2>結論：後悔しないための選び方</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 40px; font-size: 16px;">
+                最終的な判断は、ぜひ楽器店で<strong>実機を弾き比べ</strong>てみるのが一番です。<br>
+                その前に、この質問に答えて、ご自身の優先順位を決めてみましょう。
+            </p>
+
+            <h3 style="text-align: center; color: var(--text-dark); margin: 40px 0 25px 0;">迷ったらこの質問に答えて！</h3>
+            <table class="decision-table">
+                <thead>
+                    <tr>
+                        <th>質問</th>
+                        <th>Aの答え</th>
+                        <th>Bの答え</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Q1. 予算は？</strong></td>
+                        <td>A. 13万円程度に抑えたい</td>
+                        <td>B. 18万円程度まで出しても良い</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Q2. 長く使いたい？</strong></td>
+                        <td>A. まずは様子を見たい</td>
+                        <td>B. 本格的に学ぶので長く使いたい</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Q3. 鍵盤のこだわりは？</strong></td>
+                        <td>A. 重さがあれば十分</td>
+                        <td>B. 本物のピアノそっくりの繊細なタッチが良い</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Q4. 音の表現力は？</strong></td>
+                        <td>A. 基本的な音色で十分</td>
+                        <td>B. より豊かな音の表現力が欲しい</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== 結論セクション ===== -->
+    <section class="conclusion-section" id="conclusion">
+        <h2>あなたの選択は、こちらです！</h2>
+        <div class="conclusion-cards">
+            <div class="conclusion-card">
+                <h3>🎹 Aが多い場合</h3>
+                <p><strong>まずは「アリウス」から！</strong></p>
+                <p><strong>ヤマハ ARIUS (アリウス) YDP-165</strong></p>
+                <div class="price">132,000円（税込送料別）</div>
+                <p><strong>おすすめの理由：</strong></p>
+                <p>初期投資を抑えたい方にぴったりの価格帯でありながら、しっかりとした弾き心地と、ヤマハの美しい音色を備えています。まずは様子を見たい方に最適です。</p>
+                <p style="font-size: 14px; color: var(--accent-pink); margin-top: 15px;"><strong>✓ 初期投資を最小限に</strong><br>
+                <strong>✓ 指の力をつけるのに十分</strong><br>
+                <strong>✓ ヤマハの美しい音色</strong></p>
+            </div>
+            <div class="conclusion-card">
+                <h3>🎹 Bが多い場合</h3>
+                <p><strong>迷わず「クラビノーバ」へ！</strong></p>
+                <p><strong>ヤマハ Clavinova (クラビノーバ) CLP-735</strong></p>
+                <div class="price">176,000円（税込送料別）</div>
+                <p><strong>おすすめの理由：</strong></p>
+                <p><strong>表現力豊かな音と鍵盤</strong>を持っています。特にペダルの響きをリアルに再現するVRM技術は、より豊かな音の表現力を実現します。<strong>「もっと良いピアノだったら…」という後悔を完全に防げます。</strong></p>
+                <p style="font-size: 14px; color: var(--accent-blue); margin-top: 15px;"><strong>✓ 本物のグランドピアノそっくり</strong><br>
+                <strong>✓ 繊細な表現力を育む</strong><br>
+                <strong>✓ 長く使える本格派</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ファイナルメッセージセクション ===== -->
+    <section class="final-message">
+        <div class="final-message-content">
+            <h2>最後に：ピアノ選びは、自分の気持ちを大切にしましょう</h2>
+            <p>電子ピアノを選ぶことは、自分の音楽生活への投資です。</p>
+            <p>どちらのピアノを選んでも、それは自分の成長を応援する<strong>素晴らしい選択</strong>です。</p>
+            <p>このガイドが、あなたの電子ピアノ選びの不安を解消し、ピアノ生活の第一歩につながることを願っています。</p>
+            <p style="font-size: 18px; font-weight: bold; color: var(--text-dark); margin-top: 30px;">さあ、次は楽器店で<strong>実機を弾き比べ</strong>てみましょう！</p>
+            <a href="#" class="cta-button" style="margin-top: 25px;">楽器店を探す</a>
+        </div>
+    </section>
+
+    <!-- ===== フッター ===== -->
+    <footer>
+        <p><strong>初めての電子ピアノ選び - 失敗しないための比較ガイド</strong></p>
+        <p>ヤマハ電子ピアノの選び方ガイド</p>
+        <p style="margin-top: 20px; font-size: 12px; color: var(--text-light);">
+            ※ 価格は2025年12月時点の参考価格です。実際の価格は販売店にお問い合わせください。<br>
+            ※ このガイドは参考情報です。最終的な購入判断は、実機の試弾をおすすめします。
+        </p>
+    </footer>
+
+    <!-- ===== スムーズスクロール ===== -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
